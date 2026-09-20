@@ -138,9 +138,10 @@ dmypy.json
 
 data/
 app_ml/
+aux/
 
 
 /Users/brunocavagnaro/MS_PURDUE_DS/Story_Telling/
 /Users/brunocavagnaro/MS_PURDUE_DS/GRAD_50600_BigDataScience/
 
-/Users/brunocavagnaro/MS_PURDUE_DS/GRAD_57900_Statistical_Machine_Learning/aux/*
+/Users/brunocavagnaro/MS_PURDUE_DS/GRAD_57900_Statistical_Machine_Learning/aux/

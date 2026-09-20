@@ -1,0 +1,225 @@
+%%%%%%%% statml EXAMPLE LATEX SUBMISSION FILE %%%%%%%%%%%%%%%%%
+
+\documentclass{article}
+
+% Recommended, but optional, packages for figures and better typesetting:
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{booktabs} % for professional tables
+
+% hyperref makes hyperlinks in the resulting PDF.
+% If your build breaks (sometimes temporarily if a hyperlink spans a page)
+% please comment out the following usepackage line and replace
+% \usepackage{statml} with \usepackage[nohyperref]{statml} above.
+\usepackage{hyperref}
+
+% Attempt to make hyperref and algorithmic work together better:
+\newcommand{\theHalgorithm}{\arabic{algorithm}}
+
+% Use the following line for the initial blind version submitted for review:
+\usepackage[accepted]{statml}
+
+\begin{document}
+
+\twocolumn[
+\statmltitle{Submission and Formatting Instructions for \\
+           Statistical Machine Learning}
+
+\statmlsetsymbol{equal}{*}
+
+\begin{statmlauthorlist}
+\statmlauthor{Aeiau Zzzz}{equal,to}
+\statmlauthor{Bauiu C.~Yyyy}{equal,to}
+%\statmlauthor{Cieua Vvvvv}{goo}
+%\statmlauthor{Iaesut Saoeu}{ed}
+%\statmlauthor{Fiuea Rrrr}{to}
+%\statmlauthor{Tateu H.~Yasehe}{ed,to,goo}
+%\statmlauthor{Aaoeu Iasoh}{goo}
+%\statmlauthor{Buiui Eueu}{ed}
+%\statmlauthor{Aeuia Zzzz}{ed}
+%\statmlauthor{Bieea C.~Yyyy}{to,goo}
+%\statmlauthor{Teoau Xxxx}{ed}
+%\statmlauthor{Eee Pppp}{ed}
+\end{statmlauthorlist}
+
+\statmlaffiliation{to}{Department of Statistics, Purdue University}
+%\statmlaffiliation{goo}{Googol ShallowMind, New London, Michigan, USA}
+%\statmlaffiliation{ed}{School of Computation, University of Edenborrow, Edenborrow, United Kingdom}
+
+\statmlcorrespondingauthor{Aeiau Zzzz}{c.vvvvv@purdue.edu}
+%\statmlcorrespondingauthor{Eee Pppp}{ep@eden.co.uk}
+
+% You may provide any keywords that you
+% find helpful for describing your paper; these are used to populate
+% the "keywords" metadata in the PDF but will not be shown in the document
+\statmlkeywords{Machine Learning, statml}
+
+\vskip 0.3in
+]
+
+% this must go after the closing bracket ] following \twocolumn[ ...
+
+% This command actually creates the footnote in the first column
+% listing the affiliations and the copyright notice.
+% The command takes one argument, which is text to display at the start of the footnote.
+% The \statmlEqualContribution command is standard text for equal contribution.
+% Remove it (just {}) if you do not need this facility.
+
+%\printAffiliationsAndNotice{}  % leave blank if no need to mention equal contribution
+\printAffiliationsAndNotice{\statmlEqualContribution} % otherwise use the standard text.
+
+\begin{abstract}
+This document provides a basic paper template and submission guidelines.
+Abstracts must be a single paragraph, ideally between 4--6 sentences long.
+Gross violations will trigger corrections at the camera-ready phase.
+\end{abstract}
+
+\section{Electronic Submission}
+\label{submission}
+
+Submission to statml will be entirely electronic, via BrightSpace
+(not email). 
+
+The guidelines below will be enforced for initial submissions and
+camera-ready copies. Here is a brief summary:
+\begin{itemize}
+\item Submissions must be in PDF\@.
+\item Submitted papers can be up to eight pages long, not including references, plus unlimited space for references. 
+\item Your paper should be in \textbf{10 point Times font}.
+\item Make sure your PDF file only uses Type-1 fonts.
+\item Place figure captions \emph{under} the figure (and omit titles from inside
+    the graphic file itself). Place table captions \emph{over} the table.
+\item References must include page numbers whenever possible and be as complete
+    as possible. Place multiple citations in chronological order.
+\item Do not alter the style template; in particular, do not compress the paper
+    format by reducing the vertical spaces.
+\item Keep your abstract brief and self-contained, one paragraph and roughly
+    4--6 sentences. Gross violations will require correction at the
+    camera-ready phase. The title should have content words capitalized.
+\end{itemize}
+
+
+
+\begin{figure}[ht]
+\vskip 0.2in
+\begin{center}
+\centerline{\includegraphics[width=\columnwidth]{img_temp.png}}
+\caption{Description about your images.}
+\label{statml-historical}
+\end{center}
+\vskip -0.2in
+\end{figure}
+
+\subsection{Figures}
+
+You may want to include figures in the paper to illustrate
+your approach and results. Such artwork should be centered,
+legible, and separated from the text. Lines should be dark and at
+least 0.5~points thick for purposes of reproduction, and text should
+not appear on a gray background.
+
+Label all distinct components of each figure. If the figure takes the
+form of a graph, then give a name for each axis and include a legend
+that briefly describes each curve. Do not include a title inside the
+figure; instead, the caption should serve this function.
+
+Number figures sequentially, placing the figure number and caption
+\emph{after} the graphics, with at least 0.1~inches of space before
+the caption and 0.1~inches after it, as in
+Figure~\ref{statml-historical}. The figure caption should be set in
+9~point type and centered unless it runs two or more lines, in which
+case it should be flush left. You may float figures to the top or
+bottom of a column, and you may set wide figures across both columns
+(use the environment \texttt{figure*} in \LaTeX). Always place
+two-column figures at the top or bottom of the page.
+
+\subsection{Algorithms}
+
+If you are using \LaTeX, please use the ``algorithm'' and ``algorithmic''
+environments to format pseudocode. These require
+the corresponding stylefiles, algorithm.sty and
+algorithmic.sty, which are supplied with this package.
+Algorithm~\ref{alg:example} shows an example.
+
+\begin{algorithm}[tb]
+   \caption{Bubble Sort}
+   \label{alg:example}
+\begin{algorithmic}
+   \STATE {\bfseries Input:} data $x_i$, size $m$
+   \REPEAT
+   \STATE Initialize $noChange = true$.
+   \FOR{$i=1$ {\bfseries to} $m-1$}
+   \IF{$x_i > x_{i+1}$}
+   \STATE Swap $x_i$ and $x_{i+1}$
+   \STATE $noChange = false$
+   \ENDIF
+   \ENDFOR
+   \UNTIL{$noChange$ is $true$}
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Tables}
+
+You may also want to include tables that summarize material. Like
+figures, these should be centered, legible, and numbered consecutively.
+However, place the title \emph{above} the table with at least
+0.1~inches of space before the title and the same after it, as in
+Table~\ref{sample-table}. The table title should be set in 9~point
+type and centered unless it runs two or more lines, in which case it
+should be flush left.
+
+% Note use of \abovespace and \belowspace to get reasonable spacing
+% above and below tabular lines.
+
+\begin{table}[t]
+\caption{Classification accuracies for naive Bayes and flexible
+Bayes on various data sets.}
+\label{sample-table}
+\vskip 0.15in
+\begin{center}
+\begin{small}
+\begin{sc}
+\begin{tabular}{lcccr}
+\toprule
+Data set & Naive & Flexible & Better? \\
+\midrule
+Breast    & 95.9$\pm$ 0.2& 96.7$\pm$ 0.2& $\surd$ \\
+Cleveland & 83.3$\pm$ 0.6& 80.0$\pm$ 0.6& $\times$\\
+Glass2    & 61.9$\pm$ 1.4& 83.8$\pm$ 0.7& $\surd$ \\
+Credit    & 74.8$\pm$ 0.5& 78.3$\pm$ 0.6&         \\
+Horse     & 73.3$\pm$ 0.9& 69.7$\pm$ 1.0& $\times$\\
+Meta      & 67.1$\pm$ 0.6& 76.5$\pm$ 0.5& $\surd$ \\
+Pima      & 75.1$\pm$ 0.6& 73.9$\pm$ 0.5&         \\
+Vehicle   & 44.9$\pm$ 0.6& 61.5$\pm$ 0.4& $\surd$ \\
+\bottomrule
+\end{tabular}
+\end{sc}
+\end{small}
+\end{center}
+\vskip -0.1in
+\end{table}
+
+Tables contain textual material, whereas figures contain graphical material.
+Specify the contents of each row and column in the table's topmost
+row. Again, you may float tables to a column's top or bottom, and set
+wide tables across both columns. Place two-column tables at the
+top or bottom of the page.
+
+\subsection{Citations and References}
+
+Please include your citation here using Bibtex
+\nocite{langley00}
+
+\bibliography{example_paper}
+\bibliographystyle{statml}
+
+
+\appendix
+\section{Have an appendix here}
+Please write your appendix here if needed.
+
+
+\end{document}
+
+

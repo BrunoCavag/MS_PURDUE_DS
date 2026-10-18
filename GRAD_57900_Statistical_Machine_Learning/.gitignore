@@ -132,6 +132,13 @@ dmypy.json
 *.txt
 *.csv
 *.xlsx
+*.gz
+*.data
+*.joblib
+*.traintest
+*.png
+*.json
+*.pt
 
 # Pyre type checker
 .pyre/
